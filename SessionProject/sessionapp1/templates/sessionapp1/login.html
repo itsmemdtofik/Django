@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <title>Login Page</title>
+    <style>
+        button{
+            position: relative;
+            left: 100px;
+            width: 200px;
+            letter-spacing: 3px;
+            font-weight: bolder;
+            font-size: 12px;
+            text-transform: uppercase;
+            font-family: sans-serif;
+            background-color: aliceblue;
+        }
+        form{
+            position: absolute;
+            top: 100px;
+            left: 400px;
+            background-color: floralwhite;
+            border-radius: 5px;
+            border:1px solid black;
+            padding:20px;
+            margin: 10px;
+            box-shadow: 0 0 5px black;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="form" action="http://127.0.0.1:8000/sessionLogin/" method="POST">
+        {% csrf_token %}
+        {{form1.as_p}}
+        <button type="submit" name="submit" class="btn btn-dark">Submit</button>
+    </form>
+</body>
+
+</html>
