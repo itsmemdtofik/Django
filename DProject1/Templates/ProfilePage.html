@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <style>
+        .ProfilePage {
+            width: 400px;
+            height: 300px;
+            background-color: bisque;
+            position: absolute;
+            top: 200px;
+            left: 400px;
+            text-align: center;
+            border-radius: 5px;
+            box-shadow: 0 0 10px black;
+        }
+
+        h1 {
+            position: relative;
+            top: 100px;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+            text-transform: uppercase;
+            font-size: 30px;
+        }
+
+        input[type="button"] {
+            cursor: pointer;
+            width: 300px;
+            text-align: center;
+            height: 30px;
+            position: relative;
+            top: 500px;
+            left: 500px;
+            background-color: orangered;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bolder;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+            border-bottom: 1px solid black;
+            text-transform: uppercase;
+        }
+
+        input[type="button"]:active {
+            background-color: cadetblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ProfilePage">
+        <h1>Manipal Uniiversity</h1>
+    </div>
+
+    <a href="{{link}}"><input type="button" name="button" value="Home"></a>
+</body>
+
+</html>
