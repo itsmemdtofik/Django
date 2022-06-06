@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>About</title>
+</head>
+<body>
+	<h1>This is all about Page </h1>
+	<nav>
+		<ul>
+			<li>
+				<a href="{% url 'courseus' %}">Course Info</a>
+				<a href="{% url 'homeus' %}">Home</a>
+				<a href="{% url 'signus' %}">Signup</a>
+				<a href="{% url 'contactus' %}">Contact</a>
+			</li>
+		</ul>
+	</nav>
+</body>
+</html>
