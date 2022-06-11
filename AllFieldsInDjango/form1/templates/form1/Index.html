@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+	<title>Form</title>
+	<style type="text/css">
+		body{
+			background-color: black;
+			color: wheat;
+			text-transform: uppercase;
+			font-family: sans-serif;
+			font-size: 10px;
+			font-weight: bolder;
+			letter-spacing: 5px;
+			margin: 10px;
+		}
+		input[type = "number"]{
+			border: 1px solid #191919;
+			font-family: sans-serif;
+			font-size: 12px;
+			font-weight: bolder;
+			letter-spacing: 5px;
+			background-color: transparent;
+			width: 100%;
+			height: 40px;
+			outline: none;
+            color: orange;
+			border-radius: 2px;
+			text-align: center;
+		}
+		input[type = "url"]{
+			border: 1px solid #191919;
+			font-family: sans-serif;
+			font-size: 12px;
+			font-weight: bolder;
+			letter-spacing: 5px;
+			background-color: transparent;
+			width: 100%;
+			height: 40px;
+			outline: none;
+            color: orange;
+			border-radius: 2px;
+			text-align: center;
+		}
+		input[type = "text"]{
+			border: 1px solid #191919;
+			font-family: sans-serif;
+			font-size: 12px;
+			font-weight: bolder;
+			letter-spacing: 5px;
+			background-color: transparent;
+			width: 100%;
+			height: 40px;
+			outline: none;
+            color: white;
+			border-radius: 2px;
+			text-align: center;
+
+		}
+		input[type = "email"]{
+			border: 1px solid #191919;
+			font-family: sans-serif;
+			font-size: 12px;
+			font-weight: bolder;
+			letter-spacing: 5px;
+			background-color: transparent;
+			width: 100%;
+			height: 40px;
+			outline: none;
+            color: fuchsia;
+			border-radius: 2px;
+			text-align: center;
+		}
+		input[type = "password"]{
+			border: 1px solid #191919;
+			font-family: sans-serif;
+			font-size: 12px;
+			font-weight: bolder;
+			letter-spacing: 5px;
+			background-color: transparent;
+			width: 100%;
+			height: 40px;
+			outline: none;
+            color: greenyellow;
+			border-radius: 2px;
+			text-align: center;
+		}
+		.helptext{
+			color: orange;
+		}
+		input[type = "submit"]{
+			border: 1px solid #191919;
+			font-family: sans-serif;
+			font-size: 12px;
+			font-weight: bolder;
+			letter-spacing: 5px;
+			background-color: #080808;
+			width: 100%;
+			height: 40px;
+			outline: none;
+            color: white;
+			border-radius: 2px;
+			text-align: center;
+		    text-transform: uppercase;
+
+		}
+		textarea{
+			border: 1px solid #191919;
+			font-family: sans-serif;
+			font-size: 12px;
+			font-weight: bolder;
+			letter-spacing: 5px;
+			background-color: transparent;
+			outline: none;
+            color: yellow;
+			border-radius: 2px;
+			text-align: center;
+		    text-transform: capitalize;
+		    padding: 10px;
+		}
+		
+	</style>
+</head>
+<body>
+	
+		<h1 style="text-align:center;color:white;font-family: sans-serif;
+			font-size: 20px;
+			font-weight: bolder;
+			letter-spacing: 5px;">All <strong style="color:yellow;">Fields</strong> In Django</h1>
+			<hr color = "green" width="30%">
+			
+		<form action="" method="POST">
+			{% csrf_token %}
+				<!--{% for chaini in formDjango %}
+				   {{ chaini.label }}
+				   {{ chaini.label_tag }}
+				   {{chaini}}
+				{% endfor %}
+			<br>
+			forms.as_table, forms.as_p, forms.as_ul -->
+            
+			<!--{% for chaini in formDjango.visible_fields %}
+			    {{chaini.label_tag}}
+			    {{chaini}}
+			{% endfor %}
+
+			{% for khaini in formDjango.hidden_fields %}
+			    {{khaini}}
+			{% endfor %}-->
+			
+			{{formDjango.as_p}}
+           <br><br>
+			<div class="form-group">
+				<input type="submit" name="submit" class="btn btn-primary" style="width: 20%;">
+			</div>
+		</form>
+	
+</body>
+</html>
