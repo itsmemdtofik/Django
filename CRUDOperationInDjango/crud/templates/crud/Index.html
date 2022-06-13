@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'crud/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'crud/css/style.css' %}">
+	<title>CRUD</title>
+	<style type="text/css">
+		body{
+			background-color: black;
+		}
+		strong{
+			color: greenyellow;
+		}
+		.form-control{
+			background-color: black;
+			color: orange;
+			border: none;
+			border-bottom: 1px solid #1e1e1e;
+			text-align: center;
+			font-family:sans-serif;
+			font-weight: bolder;
+			letter-spacing: 3px;
+			font-size: 12px;
+		}
+		img{
+			border-radius: 100%;
+			margin-top: 1%;
+			margin-left: 46%;
+			border: 1px solid orange;
+		}
+		
+	</style>
+</head>
+<body>
+     <img src="{% static 'crud/images/tofik.jpg' %}" width="100">
+	<div class="container mt-0">
+		<h2 class="text-center alert alert-danger" style="font-family:sans-serif;text-transform: capitalize;font-weight: bolder;letter-spacing: 3px;background-color: transparent;border: none;color: white;">Create <strong>Retrieve Update</strong> Delete</h2>
+		<hr style="color:white; width: 50%;margin-left: 25%;margin-top: -2%;">
+
+		{% block content %}
+
+		{% endblock content %}
+
+<script type="text/javascript" src="{% static 'crud/js/bootstrap.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'crud/js/popper.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'crud/js/jquery-3.6.0.js' %}"></script>
+
+</body>
+</html>

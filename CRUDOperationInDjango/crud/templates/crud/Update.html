@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static 'crud/css/bootstrap.min.css' %}">
+	<title>Update</title>
+	<style type="text/css">
+		body{
+			background-color: black;
+		}
+		strong{
+			color: greenyellow;
+		}
+		.form-control{
+			background-color: black;
+			color: orange;
+			border: none;
+			border-bottom: 1px solid #1e1e1e;
+			text-align: center;
+			font-family:sans-serif;
+			font-weight: bolder;
+			letter-spacing: 3px;
+			font-size: 12px;
+		}
+	
+		img{
+			border-radius: 100%;
+			margin-top: 1%;
+			margin-left: 46%;
+			border: 1px solid orange;
+		}
+	</style>
+</head>
+<body>
+	    <img src="{% static 'crud/images/tofik.jpg' %}" width="100">
+		<div class="container mt-0">
+		<h2 class="text-center alert alert-danger" style="font-family:sans-serif;text-transform: capitalize;font-weight: bolder;letter-spacing: 3px;background-color: transparent;border: none;color: white;">Create <strong>Retrieve Update</strong> Delete</h2>
+		<hr style="color:white; width: 50%;margin-left: 25%;margin-top: -2%;">
+		<div class="row">
+			<div class="col-sm-12">
+				<h5 class="alert alert-info text-center" style="font-family:sans-serif;text-transform: uppercase;font-weight: bolder;letter-spacing: 3px; color: white;background: linear-gradient(45deg, indigo,fuchsia,red,orange);border: none;">Update Student Records </h5>
+				<form action="" method="POST">
+					{% csrf_token %}
+                    
+					{{form.as_p}}
+                    <div class="form-group">
+					<input type="submit" name="submit" class="btn btn-outline-primary" value="Update" style="width:20%;height:50px;font-family:sans-serif;text-transform: uppercase;font-weight: bolder;letter-spacing: 3px;font-size: 12px;">
+					<a href="{% url 'InsertAndDisplay' %}"><input type="button" name="submit" class="btn btn-outline-dark" value="Home" style="width:20%;height:50px;font-family:sans-serif;text-transform: uppercase;font-weight: bolder;letter-spacing: 3px;font-size: 12px;"></a>
+				    </div>
+
+				</form>
+			</div>		
+		</div>
+
+		<script type="text/javascript" src="{% static 'crud/js/bootstrap.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'crud/js/popper.min.js' %}"></script>
+		<script type="text/javascript" src="{% static 'crud/js/jquery-3.6.0.js' %}"></script>
+	</body>
+	</html>

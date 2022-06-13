@@ -1,0 +1,56 @@
+{% extends 'crud/Index.html' %}
+{% block content %}
+<div class="row">
+	<div class="col-sm-4">
+		<h5 class="alert alert-info text-center" style="font-family:sans-serif;text-transform: uppercase;font-weight: bolder;letter-spacing: 3px; color: white;background: linear-gradient(45deg, indigo,fuchsia,red,orange);border: none;">Add New Records</h5>
+		<form action="" method="POST">
+			{% csrf_token %}
+
+			{{form.as_p}}
+
+			<input type="submit" name="submit" class="btn btn-outline-success" value="Insert" style="width:40%; height: 40px;font-family:sans-serif;font-weight: bolder;letter-spacing: 3px;font-size: 12px;text-transform: uppercase;">
+			<input type="reset" name="reset" class="btn btn-outline-light" value="Reset" style="width:40%;height: 40px;font-family:sans-serif;font-weight: bolder;letter-spacing: 3px;font-size: 12px;text-transform: uppercase;">
+		</form>
+	</div>
+	<div class="col-sm-8">
+		<h5 class="alert alert-info text-center" style="font-family:sans-serif;text-transform: uppercase;font-weight: bolder;letter-spacing: 3px; color: white;background: linear-gradient(45deg, indigo,fuchsia,red,orange);border: none;">Student Records </h5>
+		{% if student %}
+		<table class="table table-hover"  id="customers" style="border: 1px solid #191919; color: aliceblue;">
+			<thead style="background-color:#000;width: 100%;color: white;font-family:sans-serif;text-transform: uppercase;font-weight: bolder;letter-spacing: 3px;font-size: 12px;border: 1px solid #191919;">
+				<tr>
+					<th scope="col"> ID </th>
+					<th scope="col"> Name </th>
+					<th scope="col"> Email </th>
+					<th scope="col"> Password </th>
+					<th scope="col">Update</th>
+					<th scope="col">Delete</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for st in student %}
+				<tr>
+					<th scope="row" style="font-family:sans-serif;font-weight: bolder;letter-spacing: 3px;font-size: 12px;"> {{st.id}} </th>
+					<td style="font-family:sans-serif;font-weight: bolder;letter-spacing: 3px;font-size: 12px;"> {{st.name}} </td>
+					<td style="font-family:sans-serif;font-weight: bolder;letter-spacing: 3px;font-size: 12px;"> {{st.email}} </td>
+					<td style="font-family:sans-serif;font-weight: bolder;letter-spacing: 3px;font-size: 12px;"> {{st.password}} </td>
+					<td><div class="form-group">
+						<a href="{% url 'update' st.id %}" class="btn btn-outline-info" style="font-family:sans-serif;font-weight: bolder;text-transform: uppercase;letter-spacing: 3px;font-size: 12px;">Update</a>
+					    </div>
+					</td>
+					<td><form action="{% url 'delete' st.id %}" method="POST" class="d-inline">
+							{% csrf_token %}
+							<div class="form-group">
+							<input type="submit" name="submit" class="btn btn-outline-danger" value="Delete" style="font-family:sans-serif;font-weight: bolder;letter-spacing: 3px;font-size: 12px; text-transform: uppercase;">
+							</div>	
+						</form>
+					</td>
+				</tr>
+			</tbody>
+				{% endfor %}
+		</table>
+			{% else %}
+			<h4 class="text-center alert alert-info">No Records found</h4>
+			{% endif %}
+	</div>
+</div>
+	{% endblock content %}
