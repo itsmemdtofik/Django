@@ -1,0 +1,39 @@
+.success{
+	font-family: sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	text-transform: capitalize;
+	font-display: !important;
+	color: red;
+	position: relative;
+	left: 18%;
+	top: 10px;
+}
+body{
+	background-color: antiquewhite;
+	letter-spacing:3px ;
+	font-family: sans-serif;
+	font-size: 12px;
+	font-weight: bolder;
+	text-transform: capitalize;
+	color: red;
+
+}
+#form{
+	font-family: sans-serif;
+	font-size: 12px;
+	font-weight: bolder;
+	text-transform: capitalize;
+	font-display: !important;
+	color: fuchsia;
+	letter-spacing: 4px;
+
+}
+#do{
+	font-family: sans-serif;
+	font-size: 12px;
+	font-weight: bolder;
+	text-transform: capitalize;
+	font-display: !important;
+	letter-spacing: 5px;
+}
