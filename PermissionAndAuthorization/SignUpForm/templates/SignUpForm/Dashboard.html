@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static "SignUpForm/css/bootstrap.min.css" %}">
+	<link rel="stylesheet" type="text/css" href=" {% static 'SignUpForm/css/style.css' %} ">
+	<title>Dashboard</title>
+</head>
+<body>
+	<div class = "container">
+		<div class = "alert text-center alert-danger">
+			<h1>User dashboard</h1>
+			<h2>Welcome {{ name }}</h2>
+		</div>
+		<div class = "form-group">
+			
+			{% if perms.SignUpForm.delete_blog %}
+			    
+			    <input type="button" name = "button" class = "btn btn-outline-dark" value = "Delete">
+			{% else %}
+            
+            <div class="alert text-center alert-primary">
+			<h3>Sorry ! <b style="color:orangered"> {{name}} </b> <br> You Do Not Have Delete Permission</h3></div>
+			
+			{% endif %}
+
+			{% if perms.SignUpForm.add_blog %}
+			    
+			    <input type="button" name = "button" class = "btn btn-outline-dark" value = "Add">
+			{% else %}
+            
+            <div class="alert text-center alert-info">
+			<h3>Sorry ! <b style="color:orangered"> {{name}} </b> <br> You Do Not Have Add Permission</h3></div>
+			
+			{% endif %}
+			
+
+			<a href="{% url 'logout' %}" class = "btn btn-outline-success">Logout</a>
+		</div>
+	</div>
+
+
+<script type="text/javascript" src="{% static "SignUpForm/js/jquery-3.6.0.js" %}"></script>
+<script type="text/javascript" src=" {% static "SignUpForm/js/popper.min.js" %}"></script>
+<script type="text/javascript" src=" {% static "SignUpForm/js/bootstrap.min.js" %}"></script>
+</body>
+</html>
