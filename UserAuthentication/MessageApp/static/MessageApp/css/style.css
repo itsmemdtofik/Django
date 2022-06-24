@@ -1,0 +1,48 @@
+.success {
+    color: green;
+    letter-spacing: 3px;
+    font-weight: bolder;
+    text-transform: capitalize;
+}
+
+.info {
+    color: springgreen;
+}
+
+.warning {
+    color: blue;
+}
+
+.error {
+    color: brown;
+}
+
+.danger {
+    color: red;
+}
+.debug{
+    color: chartreuse;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    font-size: 10px;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+input[type='submit'] {
+    background-color: springgreen;
+    color: black;
+    width: 20%;
+    height: 40px;
+    font-weight: bolder;
+    border-radius: 100px;
+}
+
+input[type="reset"] {
+    background-color: fuchsia;
+    color: black;
+    width: 20%;
+    height: 40px;
+    font-weight: bolder;
+    border-radius: 100px;
+}

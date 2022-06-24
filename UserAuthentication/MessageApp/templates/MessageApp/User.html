@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'MessageApp/css/style.css' %}">
+	<title>User Message</title>
+</head>
+<body><center>
+	<form action="" method="POST">
+		{% csrf_token %}
+		{{form.as_p}}
+
+
+		<input type="submit" name="submit" value="Submit"><br><br>
+		<input type="reset" name="reset" value="Reset">
+	</form>
+	
+	{% if messages %}
+       {% for message in messages %}
+       <p {% if message.tags %} class="{{message.tags}}" {% endif %}>{{message}}</p>
+       {% endfor %}
+	{% endif %}
+	
+	<!--{% if messages %}
+       {% for message in messages %}
+       <p {% if message.tags %} class="alert-{{message.tags}}" {% endif %}>{{message}}</p>
+       {% endfor %}
+	{% endif %}-->
+</center>
+</body>
+</html>

@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="{% static "SignUpForm/css/bootstrap.min.css" %}">
+	<link rel="stylesheet" type="text/css" href=" {% static 'SignUpForm/css/style.css' %} ">
+	<title>Profile</title>
+</head>
+<body>
+	<div class="container mt-5">
+		<div class="col-sm-10">
+			<div class="row">
+				<div class="alert text-center alert-danger">
+					<h1> <b style="color:fuchsia;">'{{ user }}'</b> You Have Logined Successfully </h1>
+				</div>
+				<form action="" method = 'POST' novalidate>
+					{% csrf_token %}
+
+					{% if form.non_field_errors %}
+					{% for error in form.non_field_errors  %}
+					<p>{{error}}</p>
+					{% endfor %}
+					{% endif %}
+
+					{% for fm in form %}
+					{{ fm.label_tag }}
+					{{ fm }}
+					{{ fm.errors | striptags }} <br><br>
+					{% endfor %} <br><br>
+
+
+					<div class="form-group">
+						<input type="submit" name="submit" value="Save" class="btn btn-info">
+						<a href="{% url 'signup' %} "><input type="button" name="button" value="Signup" class="btn btn-outline-danger"></a>
+						<a href="{% url 'login' %}"><input type="button" name="button" value="Login" class="btn btn-outline-primary"></a>
+						<a href="{% url 'logout' %}"><input type="button" name="button" value="Logout" class="btn btn-outline-success"></a>
+						<a href="{% url 'changepasswd' %}"><input type="button" name="button" value="Change Password" class="btn btn-outline-warning"></a>
+						<a href="{% url 'profile' %}"><input type="button" name="button" value="Profile" class="btn btn-outline-dark"></a>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div class="col-sm-6">
+			<div class="row">
+				{% csrf_token %}
+				{% if users != None %}
+				<h3>List Os Users </h3>
+				{% for user in users %}
+
+				<a href="{% url 'userdetails' user.id %}">{{ user.username }}</a><br><br>
+					
+				{% endfor %}
+				{% endif %}
+
+
+
+
+
+				{% if messages %}
+				{% for message in messages %}
+				<small {% if message.tags %} class="{{message.tags}}" 
+
+				{% endif %}>{{ message }}</small>
+
+				{% endfor %}
+
+
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+<script type="text/javascript" src="{% static "SignUpForm/js/jquery-3.6.0.js" %}"></script>
+<script type="text/javascript" src="{% static "SignUpForm/js/popper.min.js" %}"></script>
+<script type="text/javascript" src="{% static "SignUpForm/js/bootstrap.min.js" %}"></script>
+</body>
+</html>
