@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href=" {% static 'SignUpForm/css/style.css' %} ">
+	<title>Profile</title>
+</head>
+<body>
+	<div class="container mt-5">
+		<div class="row">
+			<div class="alert text-center alert-danger">
+				<h1> '{{ user }}' You Have Logined Successfully </h1>
+				{% if messages %}
+				{% for message in messages %}
+				<small {% if message.tags %} class="{{message.tags}}" 
+				    
+				{% endif %}>{{ message }}</small>
+					
+				{% endfor %}
+				    
+				
+				{% endif %}
+			</div>
+
+			<div class="form-group">
+			<a href="{% url 'signup' %} "><input type="button" name="button" value="Signup" class="btn btn-danger"></a>
+			<a href="{% url 'login' %}"><input type="button" name="button" value="Login" class="btn btn-primary"></a>
+			<a href="{% url 'logout' %}"><input type="button" name="button" value="Logout" class="btn btn-success"></a>
+			<a href="{% url 'changepasswd' %}"><input type="button" name="button" value="Change Password" class="btn btn-warning"></a>
+			<a href="{% url 'changepasswd1' %}"><input type="button" name="button" value="Change Password 1" class="btn btn-info"></a>
+		    </div>
+		    </div>
+
+		</div>
+	</div>
+</body>
+</html>
