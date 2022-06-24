@@ -1,2 +1,2 @@
 # Django
-Django Project
+Learn Django
