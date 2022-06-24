@@ -1,0 +1,35 @@
+{% extends "Blog/Base.html" %}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+    <div class="col-sm-12">
+        <div class="alert text-center alert-danger">
+            <h2>Contact </h2>
+        </div><br>
+
+        <form>
+            <div class="form-group">
+                <input type="text" name="uname" class="form-control text-center" placeholder="Enter Name"><br><br>
+                <input type="text" name="email" class="form-control text-center" placeholder="Enter Email">
+            </div><br><br>
+            <div class="form-group">
+                <input type="text" name="address" class="form-control text-center" placeholder="Enter Address">
+            </div><br><br>
+            <div class="form-group">
+                <input type="password" name="passwd" class="form-control text-center" placeholder="Enter Password">
+            </div><br><br>
+            <div class="form-group">
+                <textarea class="form-control text-center" id="exampleFormControlTextarea1" rows="3" placeholder="Type Message Here !" style="font-family: sans-serif;
+                font-size: 15px;
+                letter-spacing: 3px;
+                text-transform: capitalize;
+                color: white;"></textarea>
+            </div><br>
+            <div class="form-group">
+                <button type="submit" class="btn btn-outline-info" style="width:40%;height:40px;">Contact</button>
+                <button type="reset" class="btn btn-outline-success" style="width:40%;height:40px;">Reset</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock content %}
