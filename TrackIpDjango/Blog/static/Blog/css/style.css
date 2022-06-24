@@ -1,0 +1,80 @@
+body{
+	background-color:#080808;
+	color: antiquewhite;
+}
+
+.jumbo-color{
+	background-color: rgb(83, 81, 81);
+}
+
+.form-control,
+.form-control:focus{
+	background-color: black;
+	color: white;
+	border: none;
+}
+
+input[type = 'text']{
+	font-family: sans-serif;
+	font-size: 12px;
+	font-weight: bolder;
+	letter-spacing: 4px;
+	text-transform: capitalize;
+	height: 40px;
+	padding-left: 10%;
+}
+input[type = 'email']{
+	font-family: sans-serif;
+	font-size: 12px;
+	font-weight: bolder;
+	letter-spacing: 4px;
+	text-transform: capitalize;
+	height: 40px;
+	padding-left: 10%;
+}
+input[type = 'password']{
+	font-family: sans-serif;
+	font-size: 12px;
+	font-weight: bolder;
+	letter-spacing: 4px;
+	text-transform: capitalize;
+	height: 40px;
+	padding-left: 10%;
+}
+.form_group,label{
+	font-family: sans-serif;
+	font-size: 12px;
+	letter-spacing: 2px;
+	text-transform: capitalize;
+	color: wheat;
+}
+
+button{
+	font-family: sans-serif;
+	font-size: 12px;
+	letter-spacing: 3px;
+	text-transform: capitalize;
+	color: white;
+	font-size: 15px;
+
+}
+h3{
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	color: white;
+	font-size: 18px;
+}
+small{
+	font-family: sans-serif;
+	letter-spacing: 1px;
+	text-transform: capitalize;
+	color: red;
+	font-size: 12px;
+}
+h1{
+	font-family: sans-serif;
+	font-size: 15px;
+	letter-spacing: 3px;
+	text-transform: capitalize;
+	color: white;
+}
